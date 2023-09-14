@@ -1,0 +1,35 @@
+{
+    "name": "mon_maitre_de_maison",
+    "short_name": "mon_maitre_de_maison",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "L'objectif de ce projet est de développer une application mobile qui met en relation des professeurs particuliers à domicile et des personnes qui recherchent des cours particuliers. L'application permettra aux utilisateurs de trouver des professeurs qualifiés et disponibles dans leur région, et de réserver des cours à la carte.L'application permettra aux utilisateurs de trouver des professeurs qualifiés et adaptés à leurs besoins, et aux professeurs de trouver des élèves",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
