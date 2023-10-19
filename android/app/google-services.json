@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "232838126652",
+    "project_id": "enseignezmoi-26722",
+    "storage_bucket": "enseignezmoi-26722.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232838126652:android:16d2172a89b145c32eb739",
+        "android_client_info": {
+          "package_name": "com.example.enseignezmoi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232838126652-elufef5igft2q4eko25n29uqikgq2djs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4Atu__nteVR4CFWGLqGkLo7pWDSxA6tg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232838126652-elufef5igft2q4eko25n29uqikgq2djs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "232838126652-bihjv4qjp0dagrjgre4l4dlh88psaibu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.enseignezmoi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232838126652:android:8fb4dc0c8b6112772eb739",
+        "android_client_info": {
+          "package_name": "com.royaldev.mon_maitre_de_maison"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232838126652-elufef5igft2q4eko25n29uqikgq2djs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4Atu__nteVR4CFWGLqGkLo7pWDSxA6tg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232838126652-elufef5igft2q4eko25n29uqikgq2djs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "232838126652-bihjv4qjp0dagrjgre4l4dlh88psaibu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.enseignezmoi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
