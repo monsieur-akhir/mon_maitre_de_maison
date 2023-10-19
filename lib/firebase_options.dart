@@ -39,29 +39,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCuORmo6RF7UYzXZ2HqqN7caoy-npNpn5M',
-    appId: '1:232838126652:web:231ca84313ed82e82eb739',
-    messagingSenderId: '232838126652',
-    projectId: 'enseignezmoi-26722',
-    authDomain: 'enseignezmoi-26722.firebaseapp.com',
-    storageBucket: 'enseignezmoi-26722.appspot.com',
-    measurementId: 'G-TWF37BS6RX',
+    apiKey: '#####################################',
+    appId: '#######################################',
+    messagingSenderId: '####################',
+    projectId: '####################',
+    authDomain: '####################',
+    storageBucket: 'e####################',
+    measurementId: '####################',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA4Atu__nteVR4CFWGLqGkLo7pWDSxA6tg',
-    appId: '1:232838126652:android:8fb4dc0c8b6112772eb739',
-    messagingSenderId: '232838126652',
-    projectId: 'enseignezmoi-26722',
-    storageBucket: 'enseignezmoi-26722.appspot.com',
+    apiKey: '####################',
+    appId: ####################,
+    messagingSenderId: '####################',
+    projectId: '####################',
+    storageBucket: '####################',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBRWkvb14c9e6DC29o0l4Ek5E4_EqQwxE4',
-    appId: '1:232838126652:ios:84e175c0d4e192a82eb739',
-    messagingSenderId: '232838126652',
-    projectId: 'enseignezmoi-26722',
-    storageBucket: 'enseignezmoi-26722.appspot.com',
-    iosBundleId: 'com.royaldev.monMaitreDeMaison',
+    apiKey: '####################',
+    appId: '####################',
+    messagingSenderId: '####################',
+    projectId: '####################-####################',
+    storageBucket: '####################-####################.###################',
+    iosBundleId: '####################',
   );
 }
