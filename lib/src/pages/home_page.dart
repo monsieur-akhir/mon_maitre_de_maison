@@ -8,12 +8,16 @@ import 'package:mon_maitre_de_maison/src/theme/light_color.dart';
 import 'package:mon_maitre_de_maison/src/theme/text_styles.dart';
 import 'package:mon_maitre_de_maison/src/theme/theme.dart';
 
+import '../widgets/drawer.dart';
+import '../widgets/navbar.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
+
 
 class _HomePageState extends State<HomePage> {
   late List<DoctorModel> doctorDataList;
@@ -29,11 +33,6 @@ class _HomePageState extends State<HomePage> {
       child: AppBar(
         elevation: 0,
         backgroundColor: Theme.of(context).backgroundColor,
-        leading: Icon(
-          Icons.short_text,
-          size: 30,
-          color: Colors.black,
-        ),
         actions: <Widget>[
           Icon(
             Icons.notifications_none,
@@ -47,8 +46,9 @@ class _HomePageState extends State<HomePage> {
               width: 40,
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.all(Radius.circular(30)),
               ),
-              child: Image.asset("assets/user.png", fit: BoxFit.fill),
+              child: Image.asset("assets/user.png", fit: BoxFit.cover),
             ).p(8),
           ),
         ],
@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           border: InputBorder.none,
-          hintText: "Search",
+          hintText: "Recherche",
           hintStyle: TextStyles.body.subTitleColor,
           suffixIcon: SizedBox(
               width: 50,
@@ -107,9 +107,9 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text("Category", style: TextStyles.title.bold),
+                Text("Catégories", style: TextStyles.title.bold),
                 Text(
-                  "See All",
+                  "Tout voir",
                   style: TextStyles.titleNormal
                       .copyWith(color: Theme.of(context).primaryColor),
                 ).p(8).ripple(() {})
@@ -122,15 +122,15 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                _categoryCard("Chemist & Drugist", "350 + Stores",
+                _categoryCard("Professeur de Maths", "100 + profs",
                     color: LightColor.green, lightColor: LightColor.lightGreen),
-                _categoryCard("Covid - 19 Specialist", "899 Doctors",
+                _categoryCard("professeur de Physique-chimie", "200 + profs",
                     color: LightColor.skyBlue, lightColor: LightColor.lightBlue),
-                _categoryCard("Cardiologists Specialist", "500 + Doctors",
+                _categoryCard("Professeur d'anglais", "500 + profs",
                     color: LightColor.orange, lightColor: LightColor.lightOrange),
-                _categoryCard("Dermatologist", "300 + Doctors",
+                _categoryCard("Professeur de Français", "300 + Doctors",
                     color: LightColor.green, lightColor: LightColor.lightGreen),
-                _categoryCard("General Surgeon", "500 + Doctors",
+                _categoryCard("Maitre de CM2", "500 + Maitre et Maitresse",
                     color: LightColor.skyBlue, lightColor: LightColor.lightBlue)
               ],
             ),
@@ -209,7 +209,7 @@ class _HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text("Top Doctors", style: TextStyles.title.bold),
+              Text("Top Maitre de maison", style: TextStyles.title.bold),
               IconButton(
                   icon: Icon(
                     Icons.sort,
@@ -261,14 +261,14 @@ class _HomePageState extends State<HomePage> {
               height: 55,
               width: 55,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(20),
                 color: randomColor(),
               ),
               child: Image.asset(
                 model.image,
-                height: 50,
-                width: 50,
-                fit: BoxFit.contain,
+                height: 70,
+                width: 70,
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -311,8 +311,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar(),
-      backgroundColor: Colors.white,
+      //appBar: _appBar(),
+      //backgroundColor: Colors.white,
+      appBar: Navbar(
+        title: "Home",
+      ),
+      backgroundColor: ArgonColors.bgColorScreen,
+      // key: _scaffoldKey,
+      drawer: ArgonDrawer(currentPage: "HomePage"),
       body: CustomScrollView(
         slivers: <Widget>[
           SliverList(

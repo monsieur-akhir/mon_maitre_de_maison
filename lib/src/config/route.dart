@@ -5,12 +5,15 @@ import 'package:mon_maitre_de_maison/src/pages/splash_page.dart';
 import 'package:mon_maitre_de_maison/src/widgets/coustom_route.dart';
 
 import '../model/dactor_model.dart';
+import '../pages/profile.dart';
 
 class Routes {
   static Map<String, WidgetBuilder> getRoute() {
     return <String, WidgetBuilder>{
-      '/': (_) => SplashPage(),
-      '/HomePage': (_) => HomePage(),
+    //  '/': (_) => SplashPage(),
+    //  '/home': (_) => HomePage(),
+     // "/profile": (_) => Profile(),
+
     };
   }
 

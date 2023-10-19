@@ -14,7 +14,7 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-     Future.delayed(Duration(seconds: 2)).then((_) {
+     Future.delayed(Duration(seconds: 3)).then((_) {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomePage()));
     });
     super.initState();
@@ -27,7 +27,7 @@ class _SplashPageState extends State<SplashPage> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/doctor_face.jpg"),
+                image: AssetImage("assets/cover.jpg"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -55,13 +55,14 @@ class _SplashPageState extends State<SplashPage> {
                   flex: 2,
                   child: SizedBox(),
                 ),
-                Image.asset("assets/heartbeat.png", color: Colors.white,height: 100,),
+                Image.asset("assets/reading.png", color: Colors.white,height: 100,),
                 Text(
-                  "Time Health",
+                  "Nulle n'apprend s'il n'a le désir.",
                   style: TextStyles.h1Style.white,
+                  textAlign: TextAlign.center, // Ajoutez cette ligne
                 ),
                 Text(
-                  "By healthcare Evolution",
+                  "By Royal DEV",
                   style: TextStyles.bodySm.white.bold,
                 ),
                 Expanded(

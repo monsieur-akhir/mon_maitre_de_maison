@@ -1,0 +1,1625 @@
+{
+  "ABIDJAN": [
+    {
+      "COMMUNE": "ABOBO"
+    },
+    {
+      "COMMUNE": "ADJAME"
+    },
+    {
+      "COMMUNE": "ATTECOUBE"
+    },
+    {
+      "COMMUNE": "COCODY"
+    },
+    {
+      "COMMUNE": "KOUMASSI"
+    },
+    {
+      "COMMUNE": "MARCORY"
+    },
+    {
+      "COMMUNE": "PLATEAU"
+    },
+    {
+      "COMMUNE": "PORT-BOUET"
+    },
+    {
+      "COMMUNE": "TREICHVILLE"
+    },
+    {
+      "COMMUNE": "YOPOUGON"
+    },
+    {
+      "COMMUNE": "ANYAMA"
+    },
+    {
+      "COMMUNE": "BINGERVILLE"
+    },
+    {
+      "COMMUNE": "BROFODOUME"
+    },
+    {
+      "COMMUNE": "SONGON"
+    }
+  ],
+  "YAMOUSSOUKRO": [
+    {
+      "COMMUNE": "ATTIEGOUAKRO"
+    },
+    {
+      "COMMUNE": "LOLOBO (D'ATTIEGOUAKRO)"
+    },
+    {
+      "COMMUNE": "YAMOUSSOUKRO"
+    },
+    {
+      "COMMUNE": "KOSSOU"
+    }
+  ],
+  "SAN PEDRO": [
+    {
+      "COMMUNE": "DOBA"
+    },
+    {
+      "COMMUNE": "DOGBO"
+    },
+    {
+      "COMMUNE": "GABIADJI"
+    },
+    {
+      "COMMUNE": "GRAND-BEREBY"
+    },
+    {
+      "COMMUNE": "SAN-PEDRO"
+    },
+    {
+      "COMMUNE": "DAPO-IBOKE"
+    },
+    {
+      "COMMUNE": "DJAMANDIOKE"
+    },
+    {
+      "COMMUNE": "DJOUROUTOU"
+    },
+    {
+      "COMMUNE": "GRABO"
+    },
+    {
+      "COMMUNE": "OLODIO"
+    },
+    {
+      "COMMUNE": "TABOU"
+    }
+  ],
+  "NAWA": [
+    {
+      "COMMUNE": "BUYO"
+    },
+    {
+      "COMMUNE": "DAPEOUA"
+    },
+    {
+      "COMMUNE": "DABOUYO"
+    },
+    {
+      "COMMUNE": "GUEYO"
+    },
+    {
+      "COMMUNE": "GNAMANGUI"
+    },
+    {
+      "COMMUNE": "MEAGUI"
+    },
+    {
+      "COMMUNE": "OUPOYO"
+    },
+    {
+      "COMMUNE": "GRAND-ZATTRY"
+    },
+    {
+      "COMMUNE": "LILIYO"
+    },
+    {
+      "COMMUNE": "OKROUYO"
+    },
+    {
+      "COMMUNE": "SOUBRE"
+    }
+  ],
+  "GBOKLE": [
+    {
+      "COMMUNE": "DAHIRI"
+    },
+    {
+      "COMMUNE": "FRESCO"
+    },
+    {
+      "COMMUNE": "GBAGBAM"
+    },
+    {
+      "COMMUNE": "DAKPADOU"
+    },
+    {
+      "COMMUNE": "GRIHIRI"
+    },
+    {
+      "COMMUNE": "LOBAKUYA"
+    },
+    {
+      "COMMUNE": "MEDON"
+    },
+    {
+      "COMMUNE": "SAGO"
+    },
+    {
+      "COMMUNE": "SASSANDRA"
+    }
+  ],
+  "INDENIE-DJUABLIN": [
+    {
+      "COMMUNE": "ABENGOUROU"
+    },
+    {
+      "COMMUNE": "AMELEKIA"
+    },
+    {
+      "COMMUNE": "ANIASSUE"
+    },
+    {
+      "COMMUNE": "EBILASSOKRO"
+    },
+    {
+      "COMMUNE": "NIABLE"
+    },
+    {
+      "COMMUNE": "YAKASSE-FEYASSE"
+    },
+    {
+      "COMMUNE": "ZARANOU"
+    },
+    {
+      "COMMUNE": "AGNIBILEKROU"
+    },
+    {
+      "COMMUNE": "AKOBOISSUE"
+    },
+    {
+      "COMMUNE": "DAME"
+    },
+    {
+      "COMMUNE": "DUFFREBO"
+    },
+    {
+      "COMMUNE": "TANGUELAN"
+    },
+    {
+      "COMMUNE": "BETTIE"
+    },
+    {
+      "COMMUNE": "DIAMARAKRO"
+    }
+  ],
+  "SUD-COMOE": [
+    {
+      "COMMUNE": "ABOISSO"
+    },
+    {
+      "COMMUNE": "ADAOU"
+    },
+    {
+      "COMMUNE": "ADJOUAN"
+    },
+    {
+      "COMMUNE": "AYAME"
+    },
+    {
+      "COMMUNE": "BIANOUAN"
+    },
+    {
+      "COMMUNE": "KOUAKRO"
+    },
+    {
+      "COMMUNE": "MAFERE"
+    },
+    {
+      "COMMUNE": "YAOU"
+    },
+    {
+      "COMMUNE": "ADIAKE"
+    },
+    {
+      "COMMUNE": "ASSINIE-MAFIA"
+    },
+    {
+      "COMMUNE": "ETUEBOUE"
+    },
+    {
+      "COMMUNE": "BONGO"
+    },
+    {
+      "COMMUNE": "BONOUA"
+    },
+    {
+      "COMMUNE": "GRAND-BASSAM"
+    },
+    {
+      "COMMUNE": "NOE"
+    },
+    {
+      "COMMUNE": "NOUAMOU"
+    },
+    {
+      "COMMUNE": "TIAPOUM"
+    }
+  ],
+  "KABADOUGOU": [
+    {
+      "COMMUNE": "GBELEBAN"
+    },
+    {
+      "COMMUNE": "SAMANGO"
+    },
+    {
+      "COMMUNE": "SEYDOUGOU"
+    },
+    {
+      "COMMUNE": "FENGOLO"
+    },
+    {
+      "COMMUNE": "MADINANI"
+    },
+    {
+      "COMMUNE": "N’GOLOBLASSO"
+    },
+    {
+      "COMMUNE": "BAKO"
+    },
+    {
+      "COMMUNE": "BOUGOUSSO"
+    },
+    {
+      "COMMUNE": "DIOULATIEDOUGOU"
+    },
+    {
+      "COMMUNE": "ODIENNE"
+    },
+    {
+      "COMMUNE": "TIEME"
+    },
+    {
+      "COMMUNE": "KIMBIRILA-SUD"
+    },
+    {
+      "COMMUNE": "SAMATIGUILA"
+    },
+    {
+      "COMMUNE": "GBONGAHA"
+    },
+    {
+      "COMMUNE": "SEGUELON"
+    }
+  ],
+  "FOLON": [
+    {
+      "COMMUNE": "GOULIA"
+    },
+    {
+      "COMMUNE": "KANIASSO"
+    },
+    {
+      "COMMUNE": "MAHANDIANA-SOKOURANI"
+    },
+    {
+      "COMMUNE": "KIMBIRILA-NORD"
+    },
+    {
+      "COMMUNE": "MINIGNAN"
+    },
+    {
+      "COMMUNE": "SOKORO"
+    },
+    {
+      "COMMUNE": "TIENKO"
+    }
+  ],
+  "GÔH": [
+    {
+      "COMMUNE": "BAYOTA"
+    },
+    {
+      "COMMUNE": "DAHIEPA-KEHI"
+    },
+    {
+      "COMMUNE": "DIGNAGO"
+    },
+    {
+      "COMMUNE": "DOUGROUPALEGONAO"
+    },
+    {
+      "COMMUNE": "DOUKOUYO"
+    },
+    {
+      "COMMUNE": "GAGNOA"
+    },
+    {
+      "COMMUNE": "GALEBRE / GALEBOUO"
+    },
+    {
+      "COMMUNE": "GNAGBODOUGNOA"
+    },
+    {
+      "COMMUNE": "GUIBEROUA"
+    },
+    {
+      "COMMUNE": "OURAGAHIO"
+    },
+    {
+      "COMMUNE": "SERIHIO"
+    },
+    {
+      "COMMUNE": "YOPOHUE"
+    },
+    {
+      "COMMUNE": "DIEGONEFLA"
+    },
+    {
+      "COMMUNE": "GUEPAHOUO"
+    },
+    {
+      "COMMUNE": "OUME"
+    },
+    {
+      "COMMUNE": "TONLA"
+    }
+  ],
+  "LÔH-DJIBOUA": [
+    {
+      "COMMUNE": "CHIEPO"
+    },
+    {
+      "COMMUNE": "DIDOKO"
+    },
+    {
+      "COMMUNE": "DIVO"
+    },
+    {
+      "COMMUNE": "HIRE"
+    },
+    {
+      "COMMUNE": "NEBO"
+    },
+    {
+      "COMMUNE": "OGOUDOU"
+    },
+    {
+      "COMMUNE": "ZEGO"
+    },
+    {
+      "COMMUNE": "DAIRO-DIDIZO"
+    },
+    {
+      "COMMUNE": "GUITRY"
+    },
+    {
+      "COMMUNE": "LAUZOUA"
+    },
+    {
+      "COMMUNE": "YOCOBOUE"
+    },
+    {
+      "COMMUNE": "DJIDJI"
+    },
+    {
+      "COMMUNE": "GAGORE"
+    },
+    {
+      "COMMUNE": "GOUDOUKO"
+    },
+    {
+      "COMMUNE": "LAKOTA"
+    },
+    {
+      "COMMUNE": "NIAMBEZARIA"
+    },
+    {
+      "COMMUNE": "ZIKISSO"
+    }
+  ],
+  "BELIER": [
+    {
+      "COMMUNE": "BOLI"
+    },
+    {
+      "COMMUNE": "DIDIEVI"
+    },
+    {
+      "COMMUNE": "MOLONOU-BLE"
+    },
+    {
+      "COMMUNE": "RAVIART"
+    },
+    {
+      "COMMUNE": "TIE-N’DIEKRO"
+    },
+    {
+      "COMMUNE": "BONIKRO"
+    },
+    {
+      "COMMUNE": "DJEKANOU"
+    },
+    {
+      "COMMUNE": "LOMOKANKRO"
+    },
+    {
+      "COMMUNE": "MOLONOU"
+    },
+    {
+      "COMMUNE": "TIEBISSOU"
+    },
+    {
+      "COMMUNE": "YAKPABO-SAKASSOU"
+    },
+    {
+      "COMMUNE": "ANGODA"
+    },
+    {
+      "COMMUNE": "KOKOUMBO"
+    },
+    {
+      "COMMUNE": "KPOUEBO"
+    },
+    {
+      "COMMUNE": "TOUMODI"
+    }
+  ],
+  "IFFOU": [
+    {
+      "COMMUNE": "DAOUKRO"
+    },
+    {
+      "COMMUNE": "ETTROKRO"
+    },
+    {
+      "COMMUNE": "N'GATTAKRO"
+    },
+    {
+      "COMMUNE": "SAMANZA"
+    },
+    {
+      "COMMUNE": "BONGUERA"
+    },
+    {
+      "COMMUNE": "KONDOSSOU"
+    },
+    {
+      "COMMUNE": "M'BAHIAKRO"
+    },
+    {
+      "COMMUNE": "AKPASSANOU"
+    },
+    {
+      "COMMUNE": "ANANDA"
+    },
+    {
+      "COMMUNE": "OUELLE"
+    },
+    {
+      "COMMUNE": "ANIANOU"
+    },
+    {
+      "COMMUNE": "FAMIENKRO"
+    },
+    {
+      "COMMUNE": "KOFFI-AMONKRO"
+    },
+    {
+      "COMMUNE": "NAFANA-PRIKRO"
+    },
+    {
+      "COMMUNE": "PRIKRO"
+    }
+  ],
+  "N'ZI": [
+    {
+      "COMMUNE": "BENGASSOU"
+    },
+    {
+      "COMMUNE": "BOCANDA"
+    },
+    {
+      "COMMUNE": "KOUADIOBLEKRO"
+    },
+    {
+      "COMMUNE": "N'ZEKREZESSOU"
+    },
+    {
+      "COMMUNE": "ABIGUI"
+    },
+    {
+      "COMMUNE": "DIANGOKRO"
+    },
+    {
+      "COMMUNE": "DIMBOKRO"
+    },
+    {
+      "COMMUNE": "NOFOU"
+    },
+    {
+      "COMMUNE": "KOUASSI-KOUASSIKRO"
+    },
+    {
+      "COMMUNE": "MEKRO"
+    }
+  ],
+  "MORONOU": [
+    {
+      "COMMUNE": "ARRAH"
+    },
+    {
+      "COMMUNE": "KOTOBI"
+    },
+    {
+      "COMMUNE": "KREGBE"
+    },
+    {
+      "COMMUNE": "ANDE"
+    },
+    {
+      "COMMUNE": "ASSIE-KOUMASSI"
+    },
+    {
+      "COMMUNE": "BONGOUANOU"
+    },
+    {
+      "COMMUNE": "N’GUESSANKRO-BONGOUANOU"
+    },
+    {
+      "COMMUNE": "ANOUMABA"
+    },
+    {
+      "COMMUNE": "ASSAHARA"
+    },
+    {
+      "COMMUNE": "M'BATTO"
+    },
+    {
+      "COMMUNE": "TIEMELEKRO"
+    }
+  ],
+  "GRANDS PONTS": [
+    {
+      "COMMUNE": "DABOU"
+    },
+    {
+      "COMMUNE": "LOPOU"
+    },
+    {
+      "COMMUNE": "TOUPAH"
+    },
+    {
+      "COMMUNE": "AHOUANOU"
+    },
+    {
+      "COMMUNE": "BACANDA"
+    },
+    {
+      "COMMUNE": "EBONOU"
+    },
+    {
+      "COMMUNE": "GRAND-LAHOU"
+    },
+    {
+      "COMMUNE": "TOUKOUZOU"
+    },
+    {
+      "COMMUNE": "ATTOUTOU"
+    },
+    {
+      "COMMUNE": "JACQUEVILLE"
+    }
+  ],
+  "AGNEBY-TIASSA": [
+    {
+      "COMMUNE": "ABOUDE"
+    },
+    {
+      "COMMUNE": "ANANGUIE"
+    },
+    {
+      "COMMUNE": "AGBOVILLE"
+    },
+    {
+      "COMMUNE": "ATTOBROU"
+    },
+    {
+      "COMMUNE": "AZAGUIE"
+    },
+    {
+      "COMMUNE": "CECHI"
+    },
+    {
+      "COMMUNE": "GRAND-MORIE"
+    },
+    {
+      "COMMUNE": "GUESSIGUIE"
+    },
+    {
+      "COMMUNE": "LOVIGUIE"
+    },
+    {
+      "COMMUNE": "ORESS-KROBOU"
+    },
+    {
+      "COMMUNE": "RUBINO"
+    },
+    {
+      "COMMUNE": "GOMON"
+    },
+    {
+      "COMMUNE": "SIKENSI"
+    },
+    {
+      "COMMUNE": "PACOBO"
+    },
+    {
+      "COMMUNE": "TAABO"
+    },
+    {
+      "COMMUNE": "GBOLOUVILLE"
+    },
+    {
+      "COMMUNE": "MOROKRO"
+    },
+    {
+      "COMMUNE": "N'DOUCI"
+    },
+    {
+      "COMMUNE": "TIASSALE"
+    }
+  ],
+  "ME": [
+    {
+      "COMMUNE": "ADZOPE"
+    },
+    {
+      "COMMUNE": "AGOU"
+    },
+    {
+      "COMMUNE": "ANNEPE"
+    },
+    {
+      "COMMUNE": "ASSIKOI"
+    },
+    {
+      "COMMUNE": "BECEDI-BRIGNAN"
+    },
+    {
+      "COMMUNE": "YAKASSE-ME"
+    },
+    {
+      "COMMUNE": "AFFERY"
+    },
+    {
+      "COMMUNE": "AKOUPE"
+    },
+    {
+      "COMMUNE": "BECOUEFIN"
+    },
+    {
+      "COMMUNE": "ABOISSO-COMOE"
+    },
+    {
+      "COMMUNE": "ALEPE"
+    },
+    {
+      "COMMUNE": "ALLOSSO"
+    },
+    {
+      "COMMUNE": "DANGUIRA"
+    },
+    {
+      "COMMUNE": "OGHLWAPO"
+    },
+    {
+      "COMMUNE": "ABONGOUA"
+    },
+    {
+      "COMMUNE": "BIEBY"
+    },
+    {
+      "COMMUNE": "YAKASSE-ATTOBROU"
+    }
+  ],
+  "TONKPI": [
+    {
+      "COMMUNE": "BIANKOUMA"
+    },
+    {
+      "COMMUNE": "BLAPLEU"
+    },
+    {
+      "COMMUNE": "GBANGBEGOUINE"
+    },
+    {
+      "COMMUNE": "GBONNE"
+    },
+    {
+      "COMMUNE": "GOUINE"
+    },
+    {
+      "COMMUNE": "KPATA"
+    },
+    {
+      "COMMUNE": "SANTA-BIANKOUMA"
+    },
+    {
+      "COMMUNE": "DALEU"
+    },
+    {
+      "COMMUNE": "DANANE"
+    },
+    {
+      "COMMUNE": "GBON-HOUYE"
+    },
+    {
+      "COMMUNE": "KOUAN-HOULE"
+    },
+    {
+      "COMMUNE": "MAHAPLEU"
+    },
+    {
+      "COMMUNE": "SEILEU"
+    },
+    {
+      "COMMUNE": "ZONNEU"
+    },
+    {
+      "COMMUNE": "BOGOUINE"
+    },
+    {
+      "COMMUNE": "FAGNAMPLEU"
+    },
+    {
+      "COMMUNE": "GBANGBEGOUINE YATI"
+    },
+    {
+      "COMMUNE": "LOGOUALE"
+    },
+    {
+      "COMMUNE": "MAN"
+    },
+    {
+      "COMMUNE": "PODIAGOUINE"
+    },
+    {
+      "COMMUNE": "SANDOUGOU-SOBA"
+    },
+    {
+      "COMMUNE": "SANGOUINE"
+    },
+    {
+      "COMMUNE": "YAPLEU"
+    },
+    {
+      "COMMUNE": "ZAGOUE"
+    },
+    {
+      "COMMUNE": "ZIOGOUINE"
+    },
+    {
+      "COMMUNE": "SIPILOU"
+    },
+    {
+      "COMMUNE": "YORODOUGOU"
+    },
+    {
+      "COMMUNE": "BANNEU"
+    },
+    {
+      "COMMUNE": "BIN-HOUYE"
+    },
+    {
+      "COMMUNE": "GOULALEU"
+    },
+    {
+      "COMMUNE": "TEAPLEU"
+    },
+    {
+      "COMMUNE": "YELLEU"
+    },
+    {
+      "COMMUNE": "ZOUAN-HOUNIEN"
+    }
+  ],
+  "CAVALLY": [
+    {
+      "COMMUNE": "BLOLEQUIN"
+    },
+    {
+      "COMMUNE": "DIBOKE"
+    },
+    {
+      "COMMUNE": "DOKE"
+    },
+    {
+      "COMMUNE": "TINHOU"
+    },
+    {
+      "COMMUNE": "ZEAGLO"
+    },
+    {
+      "COMMUNE": "BEDY-GOAZON"
+    },
+    {
+      "COMMUNE": "GUIGLO"
+    },
+    {
+      "COMMUNE": "KAADE"
+    },
+    {
+      "COMMUNE": "NIZAHON"
+    },
+    {
+      "COMMUNE": "TAÏ"
+    },
+    {
+      "COMMUNE": "ZAGNE"
+    },
+    {
+      "COMMUNE": "BAKOUBLY"
+    },
+    {
+      "COMMUNE": "MEO"
+    },
+    {
+      "COMMUNE": "NEZOBLY"
+    },
+    {
+      "COMMUNE": "PEHE"
+    },
+    {
+      "COMMUNE": "TIOBLY"
+    },
+    {
+      "COMMUNE": "TOULEPLEU"
+    }
+  ],
+  "GUEMON": [
+    {
+      "COMMUNE": "BANGOLO"
+    },
+    {
+      "COMMUNE": "BEOUE-ZIBIAO"
+    },
+    {
+      "COMMUNE": "BLENIMEOUIN"
+    },
+    {
+      "COMMUNE": "DIEOUZON"
+    },
+    {
+      "COMMUNE": "GOHOUO-ZAGNA"
+    },
+    {
+      "COMMUNE": "GUINGLO-TAHOUAKE"
+    },
+    {
+      "COMMUNE": "KAHIN-ZARABAON"
+    },
+    {
+      "COMMUNE": "ZEO"
+    },
+    {
+      "COMMUNE": "ZOU"
+    },
+    {
+      "COMMUNE": "BAGOHOUO"
+    },
+    {
+      "COMMUNE": "DUEKOUE"
+    },
+    {
+      "COMMUNE": "GBAPLEU"
+    },
+    {
+      "COMMUNE": "GUEHIEBLY"
+    },
+    {
+      "COMMUNE": "GUEZON-DUEKOUE"
+    },
+    {
+      "COMMUNE": "FACOBLY"
+    },
+    {
+      "COMMUNE": "GUEZON (DE FACOBLY)"
+    },
+    {
+      "COMMUNE": "KOUA"
+    },
+    {
+      "COMMUNE": "SEMIEN"
+    },
+    {
+      "COMMUNE": "TIENY-SIABLY"
+    },
+    {
+      "COMMUNE": "KOUIBLY"
+    },
+    {
+      "COMMUNE": "NIDROU"
+    },
+    {
+      "COMMUNE": "OUYABLY-GNONDROU"
+    },
+    {
+      "COMMUNE": "TOTRODROU"
+    }
+  ],
+  "HAUT-SASSANDRA": [
+    {
+      "COMMUNE": "BEDIALA"
+    },
+    {
+      "COMMUNE": "DALOA"
+    },
+    {
+      "COMMUNE": "GADOUAN"
+    },
+    {
+      "COMMUNE": "GBOGUHE"
+    },
+    {
+      "COMMUNE": "GONATE"
+    },
+    {
+      "COMMUNE": "ZAÏBO"
+    },
+    {
+      "COMMUNE": "BOGUEDIA"
+    },
+    {
+      "COMMUNE": "IBOGUHE"
+    },
+    {
+      "COMMUNE": "ISSIA"
+    },
+    {
+      "COMMUNE": "NAHIO"
+    },
+    {
+      "COMMUNE": "NAMANE"
+    },
+    {
+      "COMMUNE": "SAÏOUA"
+    },
+    {
+      "COMMUNE": "TAPEGUIA"
+    },
+    {
+      "COMMUNE": "BAZRA-NATTIS"
+    },
+    {
+      "COMMUNE": "DANANON"
+    },
+    {
+      "COMMUNE": "DANIA"
+    },
+    {
+      "COMMUNE": "KETTRO-BASSAM"
+    },
+    {
+      "COMMUNE": "SEITIFLA"
+    },
+    {
+      "COMMUNE": "VAVOUA"
+    },
+    {
+      "COMMUNE": "DOMANGBEU"
+    },
+    {
+      "COMMUNE": "GREGBEU"
+    },
+    {
+      "COMMUNE": "GUESSABO"
+    },
+    {
+      "COMMUNE": "ZOUKOUGBEU"
+    }
+  ],
+  "MARAHOUE": [
+    {
+      "COMMUNE": "BONON"
+    },
+    {
+      "COMMUNE": "ZAGUIETA"
+    },
+    {
+      "COMMUNE": "BEGBESSOU"
+    },
+    {
+      "COMMUNE": "BOUAFLE"
+    },
+    {
+      "COMMUNE": "N'DOUFFOUKANKRO"
+    },
+    {
+      "COMMUNE": "PAKOUABO"
+    },
+    {
+      "COMMUNE": "TIBEITA"
+    },
+    {
+      "COMMUNE": "GOHITAFLA"
+    },
+    {
+      "COMMUNE": "IRIEFLA"
+    },
+    {
+      "COMMUNE": "MAMINIGUI"
+    },
+    {
+      "COMMUNE": "BAZRE"
+    },
+    {
+      "COMMUNE": "KONONFLA"
+    },
+    {
+      "COMMUNE": "KOUETINFLA"
+    },
+    {
+      "COMMUNE": "SINFRA"
+    },
+    {
+      "COMMUNE": "KANZRA"
+    },
+    {
+      "COMMUNE": "VOUEBOUFLA"
+    },
+    {
+      "COMMUNE": "ZANZRA"
+    },
+    {
+      "COMMUNE": "ZUENOULA"
+    }
+  ],
+  "PORO": [
+    {
+      "COMMUNE": "BORON"
+    },
+    {
+      "COMMUNE": "DIKODOUGOU"
+    },
+    {
+      "COMMUNE": "GUIEMBE"
+    },
+    {
+      "COMMUNE": "DASSOUNGBOHO"
+    },
+    {
+      "COMMUNE": "KANOROBA"
+    },
+    {
+      "COMMUNE": "KARAKORO"
+    },
+    {
+      "COMMUNE": "KIEMOU"
+    },
+    {
+      "COMMUNE": "KOMBOLOKOURA"
+    },
+    {
+      "COMMUNE": "KOMBORODOUGOU"
+    },
+    {
+      "COMMUNE": "KONI"
+    },
+    {
+      "COMMUNE": "KORHOGO"
+    },
+    {
+      "COMMUNE": "LATAHA"
+    },
+    {
+      "COMMUNE": "NAFOUN"
+    },
+    {
+      "COMMUNE": "NAPIELEODOUGOU"
+    },
+    {
+      "COMMUNE": "N'GANON"
+    },
+    {
+      "COMMUNE": "NIOFOIN"
+    },
+    {
+      "COMMUNE": "SIRASSO"
+    },
+    {
+      "COMMUNE": "SOHOUO"
+    },
+    {
+      "COMMUNE": "TIORONIARADOUGOU"
+    },
+    {
+      "COMMUNE": "BOUGOU"
+    },
+    {
+      "COMMUNE": "KATIALI"
+    },
+    {
+      "COMMUNE": "KATOGO"
+    },
+    {
+      "COMMUNE": "M'BENGUE"
+    },
+    {
+      "COMMUNE": "BAHOUAKAHA"
+    },
+    {
+      "COMMUNE": "KAGBOLODOUGOU"
+    },
+    {
+      "COMMUNE": "SEDIEGO"
+    },
+    {
+      "COMMUNE": "SINEMATIALI"
+    }
+  ],
+  "TCHOLOGO": [
+    {
+      "COMMUNE": "FERKESSEDOUGOU"
+    },
+    {
+      "COMMUNE": "KOUMBALA"
+    },
+    {
+      "COMMUNE": "TOGONIERE"
+    },
+    {
+      "COMMUNE": "BILIMONO"
+    },
+    {
+      "COMMUNE": "KONG"
+    },
+    {
+      "COMMUNE": "NAFANA(DE KONG)"
+    },
+    {
+      "COMMUNE": "SIKOLO"
+    },
+    {
+      "COMMUNE": "DIAWALA"
+    },
+    {
+      "COMMUNE": "KAOUARA"
+    },
+    {
+      "COMMUNE": "NIELLE"
+    },
+    {
+      "COMMUNE": "OUANGOLODOUGOU"
+    },
+    {
+      "COMMUNE": "TOUMOUKORO"
+    }
+  ],
+  "BAGOUE": [
+    {
+      "COMMUNE": "BAYA"
+    },
+    {
+      "COMMUNE": "BOUNDIALI"
+    },
+    {
+      "COMMUNE": "GANAONI"
+    },
+    {
+      "COMMUNE": "KASSERE"
+    },
+    {
+      "COMMUNE": "SIEMPURGO"
+    },
+    {
+      "COMMUNE": "BLESSEGUE"
+    },
+    {
+      "COMMUNE": "GBON"
+    },
+    {
+      "COMMUNE": "KOLIA"
+    },
+    {
+      "COMMUNE": "KOUTO"
+    },
+    {
+      "COMMUNE": "SIANHALA"
+    },
+    {
+      "COMMUNE": "DEBETE"
+    },
+    {
+      "COMMUNE": "KANAKONO"
+    },
+    {
+      "COMMUNE": "PAPARA"
+    },
+    {
+      "COMMUNE": "TENGRELA"
+    }
+  ],
+  "GBEKE": [
+    {
+      "COMMUNE": "ANDO-KEKRENOU"
+    },
+    {
+      "COMMUNE": "BEOUMI"
+    },
+    {
+      "COMMUNE": "BODOKRO"
+    },
+    {
+      "COMMUNE": "KONDROBO"
+    },
+    {
+      "COMMUNE": "LOLOBO (DE BEOUMI)"
+    },
+    {
+      "COMMUNE": "MARABADIASSA"
+    },
+    {
+      "COMMUNE": "N'GUESSANKRO (DE BEOUMI)"
+    },
+    {
+      "COMMUNE": "BOTRO"
+    },
+    {
+      "COMMUNE": "DIABO"
+    },
+    {
+      "COMMUNE": "KROFOINSOU"
+    },
+    {
+      "COMMUNE": "LANGUIBONOU"
+    },
+    {
+      "COMMUNE": "BOUAKE"
+    },
+    {
+      "COMMUNE": "BOUNDA"
+    },
+    {
+      "COMMUNE": "BROBO"
+    },
+    {
+      "COMMUNE": "DJEBONOUA"
+    },
+    {
+      "COMMUNE": "MAMINI"
+    },
+    {
+      "COMMUNE": "AYAOU-SRAN"
+    },
+    {
+      "COMMUNE": "DIBRI-ASSIRIKRO"
+    },
+    {
+      "COMMUNE": "SAKASSOU"
+    },
+    {
+      "COMMUNE": "TOUMODI-SAKASSOU"
+    }
+  ],
+  "HAMBOL": [
+    {
+      "COMMUNE": "BASSAWA"
+    },
+    {
+      "COMMUNE": "BONIEREDOUGOU"
+    },
+    {
+      "COMMUNE": "DABAKALA"
+    },
+    {
+      "COMMUNE": "FOUMBOLO"
+    },
+    {
+      "COMMUNE": "NIEMENE"
+    },
+    {
+      "COMMUNE": "SATAMA-SOKORO"
+    },
+    {
+      "COMMUNE": "SATAMA-SOKOURA"
+    },
+    {
+      "COMMUNE": "SOKALA-SOBARA"
+    },
+    {
+      "COMMUNE": "TENDENE-BAMBARASSO"
+    },
+    {
+      "COMMUNE": "YAOSSEDOUGOU"
+    },
+    {
+      "COMMUNE": "FRONAN"
+    },
+    {
+      "COMMUNE": "KATIOLA"
+    },
+    {
+      "COMMUNE": "TIMBE"
+    },
+    {
+      "COMMUNE": "ARIKOKAHA"
+    },
+    {
+      "COMMUNE": "BADIKAHA"
+    },
+    {
+      "COMMUNE": "NIAKARAMADOUGOU"
+    },
+    {
+      "COMMUNE": "NIEDEKAHA"
+    },
+    {
+      "COMMUNE": "TAFIRE"
+    },
+    {
+      "COMMUNE": "TORTIYA"
+    }
+  ],
+  "WORODOUGOU": [
+    {
+      "COMMUNE": "DJIBROSSO"
+    },
+    {
+      "COMMUNE": "FADIADOUGOU"
+    },
+    {
+      "COMMUNE": "KANI"
+    },
+    {
+      "COMMUNE": "MORONDO"
+    },
+    {
+      "COMMUNE": "BOBI"
+    },
+    {
+      "COMMUNE": "DIARABANA"
+    },
+    {
+      "COMMUNE": "DUALLA"
+    },
+    {
+      "COMMUNE": "KAMALO"
+    },
+    {
+      "COMMUNE": "MASSALA"
+    },
+    {
+      "COMMUNE": "SEGUELA"
+    },
+    {
+      "COMMUNE": "SIFIE"
+    },
+    {
+      "COMMUNE": "WOROFLA"
+    }
+  ],
+  "BERE": [
+    {
+      "COMMUNE": "DIANRA"
+    },
+    {
+      "COMMUNE": "DIANRA-VILLAGE"
+    },
+    {
+      "COMMUNE": "KONGASSO"
+    },
+    {
+      "COMMUNE": "KOUNAHIRI"
+    },
+    {
+      "COMMUNE": "BOUANDOUGOU"
+    },
+    {
+      "COMMUNE": "MANKONO"
+    },
+    {
+      "COMMUNE": "MARANDALAH"
+    },
+    {
+      "COMMUNE": "SARHALA"
+    },
+    {
+      "COMMUNE": "TIENINGBOUE"
+    }
+  ],
+  "BAFING": [
+    {
+      "COMMUNE": "BOOKO"
+    },
+    {
+      "COMMUNE": "BOROTOU"
+    },
+    {
+      "COMMUNE": "KORO"
+    },
+    {
+      "COMMUNE": "MAHANDOUGOU"
+    },
+    {
+      "COMMUNE": "NIOKOSSO"
+    },
+    {
+      "COMMUNE": "GBELO"
+    },
+    {
+      "COMMUNE": "GOUEKAN"
+    },
+    {
+      "COMMUNE": "KOONAN"
+    },
+    {
+      "COMMUNE": "OUANINOU"
+    },
+    {
+      "COMMUNE": "SABOUDOUGOU"
+    },
+    {
+      "COMMUNE": "SANTA (DE OUANINOU)"
+    },
+    {
+      "COMMUNE": "DIOMAN"
+    },
+    {
+      "COMMUNE": "FOUNGBESSO"
+    },
+    {
+      "COMMUNE": "GUINTEGUELA"
+    },
+    {
+      "COMMUNE": "TOUBA"
+    }
+  ],
+  "GONTOUGO": [
+    {
+      "COMMUNE": "APPIMANDOUM"
+    },
+    {
+      "COMMUNE": "PINDA-BOROKO"
+    },
+    {
+      "COMMUNE": "BONDO"
+    },
+    {
+      "COMMUNE": "BONDOUKOU"
+    },
+    {
+      "COMMUNE": "GOUMERE"
+    },
+    {
+      "COMMUNE": "LAOUDI-BA"
+    },
+    {
+      "COMMUNE": "SAPLI-SEPINGO"
+    },
+    {
+      "COMMUNE": "SOROBANGO"
+    },
+    {
+      "COMMUNE": "TABAGNE"
+    },
+    {
+      "COMMUNE": "TAGADI"
+    },
+    {
+      "COMMUNE": "TAOUDI"
+    },
+    {
+      "COMMUNE": "YEZIMALA"
+    },
+    {
+      "COMMUNE": "BOAHIA"
+    },
+    {
+      "COMMUNE": "KOKOMIAN"
+    },
+    {
+      "COMMUNE": "KOUASSI-DATEKRO"
+    },
+    {
+      "COMMUNE": "KOUN-FAO"
+    },
+    {
+      "COMMUNE": "TANKESSE"
+    },
+    {
+      "COMMUNE": "TIENKOIKRO"
+    },
+    {
+      "COMMUNE": "BANDAKAGNI-TOMORA"
+    },
+    {
+      "COMMUNE": "DIMANDOUGOU"
+    },
+    {
+      "COMMUNE": "SANDEGUE"
+    },
+    {
+      "COMMUNE": "YOROBODI"
+    },
+    {
+      "COMMUNE": "ASSUEFRY"
+    },
+    {
+      "COMMUNE": "KOUASSI-NIAGUINI"
+    },
+    {
+      "COMMUNE": "TRANSUA"
+    },
+    {
+      "COMMUNE": "AMANVI"
+    },
+    {
+      "COMMUNE": "DIAMBA"
+    },
+    {
+      "COMMUNE": "TANDA"
+    },
+    {
+      "COMMUNE": "TCHEDIO"
+    }
+  ],
+  "BOUNKANI": [
+    {
+      "COMMUNE": "BOUKO"
+    },
+    {
+      "COMMUNE": "BOUNA"
+    },
+    {
+      "COMMUNE": "ONDEFIDOUO"
+    },
+    {
+      "COMMUNE": "YOUNDOUO"
+    },
+    {
+      "COMMUNE": "DANOA"
+    },
+    {
+      "COMMUNE": "DOROPO"
+    },
+    {
+      "COMMUNE": "KALAMON"
+    },
+    {
+      "COMMUNE": "NIAMOUE"
+    },
+    {
+      "COMMUNE": "BOGOFA"
+    },
+    {
+      "COMMUNE": "KAKPIN"
+    },
+    {
+      "COMMUNE": "KOTOUBA"
+    },
+    {
+      "COMMUNE": "NASSIAN"
+    },
+    {
+      "COMMUNE": "SOMINASSE"
+    },
+    {
+      "COMMUNE": "GOGO"
+    },
+    {
+      "COMMUNE": "TEHINI"
+    },
+    {
+      "COMMUNE": "TOUGBO"
+    }
+  ]
+}
