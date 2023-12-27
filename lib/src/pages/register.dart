@@ -243,28 +243,38 @@ class _RegisterState extends State<Register> {
                                           Center(
                                             child: GestureDetector(
                                               onTap: () async {
-                                                FilePickerResult? result = await FilePicker.platform.pickFiles(
-                                                  type: FileType.image, // Limitez le choix aux fichiers image
+                                                FilePickerResult? result =
+                                                    await FilePicker.platform
+                                                        .pickFiles(
+                                                  type: FileType
+                                                      .image, // Limitez le choix aux fichiers image
                                                 );
 
                                                 if (result != null) {
-                                                  PlatformFile file = result.files.first;
+                                                  PlatformFile file =
+                                                      result.files.first;
                                                   if (file.path != null) {
                                                     setState(() {
-                                                      _profileImage = File(file.path!);
+                                                      _profileImage =
+                                                          File(file.path!);
                                                     });
                                                   } else {
                                                     // Gérez le cas où file.path est nul, par exemple en affichant un message d'erreur à l'utilisateur.
                                                     showDialog(
                                                       context: context,
-                                                      builder: (BuildContext context) {
+                                                      builder: (BuildContext
+                                                          context) {
                                                         return AlertDialog(
-                                                          title: Text('Erreur de sélection de fichier'),
-                                                          content: Text('La sélection de fichier a échoué. Veuillez réessayer.'),
+                                                          title: Text(
+                                                              'Erreur de sélection de fichier'),
+                                                          content: Text(
+                                                              'La sélection de fichier a échoué. Veuillez réessayer.'),
                                                           actions: <Widget>[
                                                             TextButton(
                                                               onPressed: () {
-                                                                Navigator.of(context).pop(); // Fermez la boîte de dialogue
+                                                                Navigator.of(
+                                                                        context)
+                                                                    .pop(); // Fermez la boîte de dialogue
                                                               },
                                                               child: Text('OK'),
                                                             ),
@@ -277,7 +287,8 @@ class _RegisterState extends State<Register> {
                                               },
                                               child: CircleAvatar(
                                                 radius: 60,
-                                                backgroundImage: _profileImage != null
+                                                backgroundImage: _profileImage !=
+                                                        null
                                                     ? FileImage(_profileImage!)
                                                     : null, // Utilisez la photo de profil sélectionnée ou une icône par défaut
                                                 child: _profileImage == null
@@ -286,7 +297,6 @@ class _RegisterState extends State<Register> {
                                               ),
                                             ),
                                           ),
-
 
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),

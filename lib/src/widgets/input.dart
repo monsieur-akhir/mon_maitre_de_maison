@@ -11,10 +11,10 @@ class Input extends StatelessWidget {
   final TextEditingController? controller;
   final bool autofocus;
   final Color? borderColor;
-  final ValueChanged<String>?
-      onFieldSubmitted; // Ajout du callback pour la soumission
-  final FormFieldValidator<String>? validator; // Ajout du validateur
+  final ValueChanged<String>? onFieldSubmitted;
+  final FormFieldValidator<String>? validator;
   final bool obscureText;
+  final int? maxLines; // Ajout de maxLines
 
   Input({
     this.placeholder,
@@ -25,22 +25,22 @@ class Input extends StatelessWidget {
     this.borderColor = ArgonColors.border,
     this.controller,
     this.onFieldSubmitted,
-    this.validator, // Initialisez le validateur
+    this.validator,
     this.obscureText = false,
     this.onChanged,
+    this.maxLines, // Initialisez maxLines
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      // Utilisez TextFormField au lieu de TextField
       cursorColor: ArgonColors.muted,
       onTap: onTap,
       onChanged: onChanged,
       controller: controller,
       autofocus: autofocus,
-      style:
-          TextStyle(height: 0.85, fontSize: 14.0, color: ArgonColors.initial),
+      maxLines: maxLines, // Utilisez maxLines ici
+      style: TextStyle(height: 0.85, fontSize: 14.0, color: ArgonColors.initial),
       textAlignVertical: TextAlignVertical(y: 0.6),
       decoration: InputDecoration(
         filled: true,
@@ -68,10 +68,9 @@ class Input extends StatelessWidget {
         ),
         hintText: placeholder,
       ),
-      // Utilisez le validateur ici
       validator: validator,
-      // Utilisez le callback pour la soumission ici
       onFieldSubmitted: onFieldSubmitted,
     );
   }
 }
+

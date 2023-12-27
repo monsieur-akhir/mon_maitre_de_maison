@@ -8,8 +8,17 @@ import 'package:mon_maitre_de_maison/src/theme/light_color.dart';
 import 'package:mon_maitre_de_maison/src/theme/text_styles.dart';
 import 'package:mon_maitre_de_maison/src/theme/theme.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../widgets/drawer.dart';
 import '../widgets/navbar.dart';
+
+class FirebaseAuthService {
+  static User? getCurrentUser() {
+    return FirebaseAuth.instance.currentUser;
+  }
+}
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -21,11 +30,36 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late List<DoctorModel> doctorDataList;
+  late String _firstName;
+  late String _commune;
   @override
   void initState() {
     doctorDataList = doctorMapList.map((x) => DoctorModel.fromJson(x)).toList();
     super.initState();
+    _loadUserData();
+
   }
+
+  Future<void> _loadUserData() async {
+    try {
+      final user = FirebaseAuthService.getCurrentUser();
+      if (user != null) {
+        // Utilisez Firestore pour récupérer les données supplémentaires depuis la collection "users"
+        DocumentSnapshot userSnapshot = await FirebaseFirestore.instance.collection("users").doc(user.uid).get();
+
+        if (userSnapshot.exists) {
+          // Adapté à votre structure de données dans Firestore
+          _firstName = userSnapshot.get("firstName") ?? "Nom Inconnu";
+          _commune = userSnapshot.get("commune") ?? "Commune Inconnue";
+
+          setState(() {});
+        }
+      }
+    } catch (e) {
+      print("Erreur lors de la récupération des données utilisateur : $e");
+    }
+  }
+
 
   PreferredSize _appBar() {
     return PreferredSize(
@@ -60,10 +94,19 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("Hello,", style: TextStyles.title.subTitleColor),
-        Text("Peter Parker", style: TextStyles.h1Style),
+    Text("Hello,", style: TextStyles.title.subTitleColor),
+    _buildUserName(),
       ],
     ).p16;
+  }
+  Widget _buildUserName() {
+    if (FirebaseAuth.instance.currentUser != null) {
+      // Utilisateur connecté
+      return Text(FirebaseAuth.instance.currentUser!.displayName ?? "Utilisateur", style: TextStyles.h1Style);
+    } else {
+      // Utilisateur non connecté
+      return Text("Connecté en tant que visiteur", style: TextStyles.h1Style);
+    }
   }
 
   Widget _searchField() {

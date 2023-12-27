@@ -4,11 +4,28 @@ import 'package:mon_maitre_de_maison/src/theme/theme.dart';
 import 'package:mon_maitre_de_maison/src/widgets/drawer.dart';
 import 'package:mon_maitre_de_maison/src/widgets/navbar.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
+  @override
+  _ProfileState createState() => _ProfileState();
   const Profile({super.key});
+}
+
+  class _ProfileState extends State<Profile> {
+  bool isLoggedIn = false; //
+
+
 
   @override
   Widget build(BuildContext context) {
+    if (!isLoggedIn) {
+      // Si l'utilisateur n'est pas connecté, redirigez-le vers la page de connexion
+      Future.delayed(Duration.zero, () {
+        Navigator.pushReplacementNamed(context, '/login'); // Remplacez '/login' par le nom de votre route de connexion
+      });
+      return Scaffold(body: Center(child: CircularProgressIndicator())); // Affichez un indicateur de chargement pendant la redirection
+    }
+
+    // Si l'utilisateur est connecté, affichez le contenu du profil
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: Navbar(
@@ -352,4 +369,7 @@ class Profile extends StatelessWidget {
           )
         ]));
   }
-}
+
+  }
+
+

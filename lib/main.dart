@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:mon_maitre_de_maison/src/model/dactor_model.dart';
 import 'package:mon_maitre_de_maison/src/pages/detail_page.dart';
 import 'package:mon_maitre_de_maison/src/pages/home_page.dart';
+import 'package:mon_maitre_de_maison/src/pages/login.dart';
 import 'package:mon_maitre_de_maison/src/pages/profile.dart';
 import 'package:mon_maitre_de_maison/src/pages/register.dart';
 import 'package:mon_maitre_de_maison/src/pages/splash_page.dart';
 import 'package:mon_maitre_de_maison/src/theme/theme.dart';
 import 'package:mon_maitre_de_maison/src/widgets/coustom_route.dart';
+import 'package:mon_maitre_de_maison/src/pages/annonces.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -31,6 +33,9 @@ class MyApp extends StatelessWidget {
         '/home': (_) => HomePage(),
         "/profile": (BuildContext context) => new Profile(),
         "/account": (BuildContext context) => Register(),
+        "/login": (BuildContext context) => Login(),
+        "/annonces": (BuildContext context) => Annonces(),
+
       },
       onGenerateRoute: (settings) {
         final List<String> pathElements = settings.name!.split('/');

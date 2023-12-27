@@ -66,11 +66,12 @@ class ArgonDrawer extends StatelessWidget {
                   DrawerTile(
                       icon: Icons.settings_input_component,
                       onTap: () {
-
+                        if (currentPage != "Annonces")
+                          Navigator.pushReplacementNamed(context, '/annonces');
                       },
                       iconColor: ArgonColors.error,
-                      title: "Elements",
-                      isSelected: currentPage == "Elements" ? true : false),
+                      title: "Annonces",
+                      isSelected: currentPage == "Annonces" ? true : false),
                   DrawerTile(
                       icon: Icons.apps,
                       onTap: () {
