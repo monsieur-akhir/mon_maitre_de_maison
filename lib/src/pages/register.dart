@@ -27,7 +27,7 @@ class _RegisterState extends State<Register> {
   double _uploadProgress = 0.0;
 
   final double height = window.physicalSize.height;
-
+  bool _isRegistering = false;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _firstName = '';
   String _lastName = '';
@@ -41,7 +41,7 @@ class _RegisterState extends State<Register> {
   bool _hasError = false;
   File? _diplomaFile;
   File? _profileImage;
-  String? _profilePhotoPath;
+  String? _profileImagePath;
   String? _diplomaPath;
   String? _selectedRegion;
   String? _selectedCommune;
@@ -99,118 +99,9 @@ class _RegisterState extends State<Register> {
                         borderRadius: BorderRadius.circular(4.0),
                       ),
                       child: Column(
-                        children: [
+                        children: [ //height: MediaQuery.of(context).size.height * 0.63,
                           Container(
-                              height: MediaQuery.of(context).size.height * 0.15,
-                              decoration: BoxDecoration(
-                                  color: ArgonColors.white,
-                                  border: Border(
-                                      bottom: BorderSide(
-                                          width: 0.5,
-                                          color: ArgonColors.muted))),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Center(
-                                      child: Padding(
-                                    padding: const EdgeInsets.only(top: 8.0),
-                                    child: Text("Sign up with",
-                                        style: TextStyle(
-                                            color: ArgonColors.text,
-                                            fontSize: 16.0)),
-                                  )),
-                                  Padding(
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        ElevatedButton(
-                                          onPressed: () {},
-                                          style: ElevatedButton.styleFrom(
-                                            primary: ArgonColors.secondary,
-                                            onPrimary: ArgonColors.primary,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(4),
-                                            ),
-                                          ),
-                                          child: const Padding(
-                                            padding: EdgeInsets.only(
-                                              bottom: 10,
-                                              top: 10,
-                                              left: 14,
-                                              right: 14,
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Icon(
-                                                  FontAwesomeIcons.github,
-                                                  size: 13,
-                                                ),
-                                                SizedBox(
-                                                  width: 5,
-                                                ),
-                                                Text(
-                                                  "GITHUB",
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 13,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        ElevatedButton(
-                                          onPressed: () {},
-                                          style: ElevatedButton.styleFrom(
-                                            primary: ArgonColors.secondary,
-                                            onPrimary: ArgonColors.primary,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(4),
-                                            ),
-                                          ),
-                                          child: const Padding(
-                                            padding: EdgeInsets.only(
-                                              bottom: 10,
-                                              top: 10,
-                                              left: 8,
-                                              right: 8,
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Icon(
-                                                  FontAwesomeIcons.facebook,
-                                                  size: 13,
-                                                ),
-                                                SizedBox(
-                                                  width: 5,
-                                                ),
-                                                Text(
-                                                  "FACEBOOK",
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 13,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  // Divider()
-                                ],
-                              )), //height: MediaQuery.of(context).size.height * 0.63,
-                          Container(
+                            key: _formKey,
                             color: Color.fromRGBO(244, 245, 247, 1),
                             child: SingleChildScrollView(
                               child: Padding(
@@ -301,7 +192,7 @@ class _RegisterState extends State<Register> {
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Input(
-                                              placeholder: "Name",
+                                              placeholder: "Nom",
                                               prefixIcon: Icon(Icons.person),
                                               validator: (value) {
                                                 if (value == null ||
@@ -325,7 +216,7 @@ class _RegisterState extends State<Register> {
                                               validator: (value) {
                                                 if (value == null ||
                                                     value.isEmpty) {
-                                                  return 'Veuillez entrer votre nom';
+                                                  return 'Veuillez entrer votre prénom';
                                                 }
                                                 return null; // Retourne null si la validation réussit
                                               },
@@ -370,7 +261,7 @@ class _RegisterState extends State<Register> {
                                               validator: (value) {
                                                 if (value == null ||
                                                     value.isEmpty) {
-                                                  return 'Veuillez entrer votre nom';
+                                                  return 'Veuillez entrer votre numéro de téléphone';
                                                 }
                                                 return null; // Retourne null si la validation réussit
                                               },
@@ -382,44 +273,21 @@ class _RegisterState extends State<Register> {
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Input(
-                                              placeholder: "Password",
+                                              placeholder: "Mot de passe",
                                               prefixIcon: Icon(Icons.lock),
                                               obscureText: true,
                                               validator: (value) {
-                                                if (value == null ||
-                                                    value.isEmpty) {
+                                                if (value!.isEmpty) {
                                                   return 'Veuillez entrer votre mot de passe';
                                                 }
-                                                // Vous pouvez ajouter une validation de mot de passe supplémentaire ici
-                                                return null; // Retourne null si la validation réussit
+                                                if (value.length < 8) {
+                                                  return 'Le mot de passe doit contenir au moins 8 caractères';
+                                                }
+                                                return null;
                                               },
                                               onFieldSubmitted: (value) {
-                                                // Le code à exécuter lorsque ce champ est soumis
+                                                _password = value!;
                                               },
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 24.0),
-                                            child: RichText(
-                                              text: TextSpan(
-                                                text:
-                                                    "force du mot de passe : ",
-                                                style: TextStyle(
-                                                  color: ArgonColors.muted,
-                                                ),
-                                                children: [
-                                                  TextSpan(
-                                                    text: "forte",
-                                                    style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      color:
-                                                          ArgonColors.success,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
                                             ),
                                           ),
                                           // Dropdown pour sélectionner la région
@@ -429,7 +297,7 @@ class _RegisterState extends State<Register> {
                                                 DropdownButtonFormField<String>(
                                               decoration: InputDecoration(
                                                 labelText:
-                                                    'Sélectionnez une région',
+                                                    'Sélectionnez votre région',
                                                 prefixIcon:
                                                     Icon(Icons.location_on),
                                                 border: OutlineInputBorder(
@@ -465,7 +333,7 @@ class _RegisterState extends State<Register> {
                                                   String>(
                                                 decoration: InputDecoration(
                                                   labelText:
-                                                      'Sélectionnez une commune',
+                                                      'Sélectionnez votre commune ou ville',
                                                   prefixIcon:
                                                       Icon(Icons.map_sharp),
                                                   border: OutlineInputBorder(
@@ -573,65 +441,20 @@ class _RegisterState extends State<Register> {
                                                 Text(
                                                     'Sélectionnez votre diplôme'),
                                                 ElevatedButton(
-                                                  onPressed: () async {
-                                                    setState(() {
-                                                      _uploadProgress =
-                                                          0.0; // Réinitialisez la progression du téléchargement
-                                                    });
-
-                                                    FilePickerResult? result =
-                                                        await FilePicker
-                                                            .platform
-                                                            .pickFiles(
-                                                      type: FileType.custom,
-                                                      allowedExtensions: [
-                                                        'pdf',
-                                                        'jpeg',
-                                                        'jpg',
-                                                        'png'
-                                                      ],
-                                                    );
-
-                                                    if (result != null) {
-                                                      PlatformFile file =
-                                                          result.files.first;
-
-                                                      // Le code de téléchargement du fichier va ici
-                                                      // Vous devrez probablement utiliser un package comme http ou firebase_storage pour le téléchargement
-
-                                                      // Exemple hypothétique de progression (à adapter à votre utilisation réelle)
-                                                      for (int i = 0;
-                                                          i <= 100;
-                                                          i++) {
-                                                        await Future.delayed(
-                                                            Duration(
-                                                                milliseconds:
-                                                                    100));
-                                                        setState(() {
-                                                          _uploadProgress = i /
-                                                              100; // Mettez à jour la progression
-                                                        });
-                                                      }
-
-                                                      // Téléchargement terminé
-                                                    }
-                                                  },
+                                                  onPressed: _selectDiploma,
                                                   child: Text(
                                                       'Télécharger un fichier'),
                                                 ),
-                                                LinearProgressIndicator(
-                                                  value:
-                                                      _uploadProgress, // La valeur doit être comprise entre 0.0 et 1.0
-                                                  minHeight:
-                                                      10, // Hauteur minimale de la barre de progression
-                                                  backgroundColor: Colors.grey[
-                                                      300], // Couleur de fond de la barre de progression
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                              Color>(
-                                                          Colors
-                                                              .blue), // Couleur de remplissage de la barre de progression
-                                                ),
+                                                if (_diplomaFile != null)
+                                                  LinearProgressIndicator(
+                                                    value: _uploadProgress,
+                                                    minHeight: 10,
+                                                    backgroundColor:
+                                                        Colors.grey[300],
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(Colors.blue),
+                                                  ),
                                               ],
                                             ),
                                         ],
@@ -684,11 +507,8 @@ class _RegisterState extends State<Register> {
                                         padding: const EdgeInsets.only(top: 16),
                                         child: Center(
                                           child: TextButton(
-                                            onPressed: () {
-                                              // Réagir lorsque le bouton est pressé
-                                              Navigator.pushNamed(
-                                                  context, '/home');
-                                            },
+                                            onPressed:
+                                                _submitForm, // déplacez l'appel de la fonction onPressed en dehors de l'accolade de l'enfant
                                             style: TextButton.styleFrom(
                                               primary: ArgonColors.white,
                                               backgroundColor:
@@ -706,7 +526,7 @@ class _RegisterState extends State<Register> {
                                                 bottom: 12,
                                               ),
                                               child: Text(
-                                                "REGISTER",
+                                                "Enregistrer",
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 16,
@@ -729,5 +549,196 @@ class _RegisterState extends State<Register> {
             )
           ],
         ));
+  }
+
+  void _pickImage(ImageSource source) async {
+    final pickedImage = await ImagePicker().pickImage(source: source);
+    if (pickedImage != null) {
+      setState(() {
+        _profileImage = File(pickedImage.path);
+      });
+    }
+  }
+
+  void _selectDiploma() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['jpg', 'jpeg', 'png', 'pdf'],
+    );
+
+    if (result != null) {
+      PlatformFile file = result.files.first;
+      setState(() {
+        _diplomaFile = File(file.path!);
+      });
+    }
+  }
+
+  Future<void> _submitForm() async {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      // Définissez `_isRegistering` sur true pour afficher l'animation
+      setState(() {
+        _isRegistering = true;
+      });
+      bool isEmailExists = await checkIfEmailExists(_email);
+
+      if (isEmailExists) {
+        // L'adresse e-mail existe déjà, affichez un message d'erreur
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Erreur de création de compte'),
+              content: Text('L\'adresse e-mail existe déjà.'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(); // Fermez la boîte de dialogue
+                  },
+                  child: Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
+      } else {
+        try {
+          // Create the user account using Firebase Authentication
+          UserCredential userCredential = await FirebaseAuth.instance
+              .createUserWithEmailAndPassword(
+                  email: _email, password: _password!);
+
+          // Get the UID of the newly created user
+          String userId = userCredential.user!.uid;
+
+          // Upload profile photo to Firebase Storage
+          if (_profileImage != null) {
+            final profilePhotoRef =
+                _storage.ref().child('profilePhotos/$userId');
+            await profilePhotoRef.putFile(_profileImage!);
+            final profilePhotoUrl = await profilePhotoRef.getDownloadURL();
+            _profileImagePath = profilePhotoUrl;
+          }
+
+          // Upload diploma to Firebase Storage if the user is a teacher
+          if (_isTeacher && _diplomaFile != null) {
+            final diplomaRef = _storage.ref().child('diplomas/$userId');
+            await diplomaRef.putFile(_diplomaFile!);
+            final diplomaUrl = await diplomaRef.getDownloadURL();
+            _diplomaPath = diplomaUrl;
+          }
+
+          // Add user data to Firestore
+          await _firestore.collection('users').doc(userId).set({
+            'firstName': _firstName,
+            'lastName': _lastName,
+            'email': _email,
+            'phoneNumber': _phoneNumber,
+            'address': _address,
+            'profileType': _selectedProfileType,
+            'profilePhotoPath': _profileImagePath,
+            'diplomaPath': _diplomaPath,
+            'region': _selectedRegion,
+            'commune': _selectedCommune,
+            'quartier': _quartier
+          });
+          setState(() {
+            _isRegistering = false;
+          });
+          // Reset the form
+
+          // Show a success dialog and navigate to the main page
+          _showSuccessDialog();
+        } catch (e) {
+          if (e is FirebaseAuthException) {
+            if (e.code == 'email-already-in-use') {
+              // L'adresse e-mail est déjà utilisée, affichez un message d'erreur
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text('Erreur d\'inscription'),
+                    content: Text(
+                        'Cette adresse e-mail est déjà associée à un compte.'),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('OK'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            } else {
+              // Gérez d'autres erreurs Firebase ici si nécessaire
+              setState(() {
+                _isRegistering = false;
+              });
+              print('Erreur Firebase: ${e.code}');
+            }
+          } else {
+            setState(() {
+              _isRegistering = false;
+            });
+            // Gérez d'autres erreurs inattendues ici si nécessaire
+            print('Erreur inattendue: $e');
+          }
+        }
+      }
+    }
+  }
+
+  void _showSuccessDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Compte créé avec succès'),
+          content: Text('Votre compte a été créé avec succès.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                // Close the dialog
+                Navigator.of(context).pop();
+                // Navigate to the main page or perform other actions as needed
+                Navigator.pushNamed(context, '/');
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<String> uploadDiploma(File diplomaFile) async {
+    String fileName = DateTime.now().millisecondsSinceEpoch.toString();
+    firebase_storage.Reference ref = _storage.ref().child('diplomas/$fileName');
+    firebase_storage.UploadTask uploadTask = ref.putFile(diplomaFile);
+    firebase_storage.TaskSnapshot taskSnapshot = await uploadTask;
+    String downloadUrl = await taskSnapshot.ref.getDownloadURL();
+    return downloadUrl;
+  }
+
+  Future<String> uploadProfilePhoto(File profilePhoto) async {
+    String fileName = DateTime.now().millisecondsSinceEpoch.toString();
+    firebase_storage.Reference ref =
+        _storage.ref().child('profilePhotos/$fileName');
+    firebase_storage.UploadTask uploadTask = ref.putFile(profilePhoto);
+    firebase_storage.TaskSnapshot taskSnapshot = await uploadTask;
+    String downloadUrl = await taskSnapshot.ref.getDownloadURL();
+    return downloadUrl;
+  }
+
+  Future<bool> checkIfEmailExists(String email) async {
+    QuerySnapshot querySnapshot = await _firestore
+        .collection('users')
+        .where('email', isEqualTo: email)
+        .get();
+
+    return querySnapshot.docs.isNotEmpty;
   }
 }

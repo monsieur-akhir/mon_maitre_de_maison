@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mon_maitre_de_maison/src/theme/extention.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
@@ -52,8 +54,14 @@ class Navbar extends StatefulWidget implements PreferredSizeWidget {
   Size get preferredSize => Size.fromHeight(_preferredHeight);
 }
 
+class FirebaseAuthService {
+  static User? getCurrentUser() {
+    return FirebaseAuth.instance.currentUser;
+  }
+}
 class _NavbarState extends State<Navbar> {
   String? activeTag;
+  String _profilePhotoPath = "";
 
   ItemScrollController _scrollController = ItemScrollController();
 
@@ -62,6 +70,29 @@ class _NavbarState extends State<Navbar> {
       activeTag = widget.tags![0];
     }
     super.initState();
+    _loadUserData();
+  }
+  Future<void> _loadUserData() async {
+    try {
+      final user = FirebaseAuthService.getCurrentUser();
+      if (user != null) {
+        // Utilisez Firestore pour récupérer les données supplémentaires depuis la collection "users"
+        DocumentSnapshot userSnapshot = await FirebaseFirestore.instance.collection("users").doc(user.uid).get();
+
+        if (userSnapshot.exists) {
+          // Adapté à votre structure de données dans Firestore
+        setState(() {
+          _profilePhotoPath = userSnapshot.get("profilePhotoPath") ?? "https://cdn-icons-png.flaticon.com/128/3177/3177440.png";
+        });
+        }
+      }
+      else
+       setState(() {
+         _profilePhotoPath = "https://cdn-icons-png.flaticon.com/128/3177/3177440.png";
+       });
+    } catch (e) {
+      print("Erreur lors de la récupération des données utilisateur : $e");
+    }
   }
 
   @override
@@ -149,8 +180,8 @@ class _NavbarState extends State<Navbar> {
                             CircleAvatar(
                               radius: 25, // Ajustez le rayon selon vos besoins
                               backgroundColor: Theme.of(context).primaryColor,
-                              child: Image.asset(
-                                "assets/user.png",
+                              child: Image.network(
+                                _profilePhotoPath,
                                 fit: BoxFit.cover,
                                 height: 50, // Ajustez la taille de l'image à l'intérieur du cercle
                                 width: 50,

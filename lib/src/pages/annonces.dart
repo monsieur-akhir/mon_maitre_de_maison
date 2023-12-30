@@ -1,7 +1,12 @@
+import 'dart:convert';
+import 'package:cloud_firestore/cloud_firestore.dart' as firestore;
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/services.dart';
 
 import '../theme/theme.dart';
 import '../widgets/drawer.dart';
@@ -11,18 +16,16 @@ import '../widgets/navbar.dart';
 class Annonces extends StatefulWidget {
   @override
   _AnnoncesState createState() => _AnnoncesState();
+
 }
 
+
 class _AnnoncesState extends State<Annonces> {
-  File? _diplomaFile;
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _descriptionController = TextEditingController();
-  TextEditingController _tarifController = TextEditingController();
-  TextEditingController _localisationController = TextEditingController();
-  TextEditingController _langueController = TextEditingController();
-  TextEditingController _accesVisioController = TextEditingController();
-  String _titre = '';
-  String _description= '';
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class _AnnoncesState extends State<Annonces> {
     return Scaffold(
         appBar: Navbar(transparent: true, title: ""),
         extendBodyBehindAppBar: true,
-        drawer: ArgonDrawer(currentPage: "Annonces"),
+        drawer: ArgonDrawer(currentPage: "Mes Annonces"),
         body: Stack(
           children: [
             Container(
@@ -53,7 +56,7 @@ class _AnnoncesState extends State<Annonces> {
                           padding: EdgeInsets.only(top: 80.0, bottom: 24.0),
                           child: Center(
                             child: Text(
-                              "Create an Announcement",
+                              "Créer une annonce de cours",
                               style: TextStyle(
                                 color: ArgonColors.text,
                                 fontWeight: FontWeight.w500,
@@ -65,57 +68,22 @@ class _AnnoncesState extends State<Annonces> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // ... (Autres champs d'entrée)
-
-                            // Champ d'entrée pour le titre de l'annonce
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Input(
-                                placeholder: "Titre",
-                                prefixIcon: Icon(Icons.title),
-                                validator: (value) {
-                                  if (value == null ||
-                                      value.isEmpty) {
-                                    return 'Veuillez entrer un titre';
-                                  }
-                                  return null; // Retourne null si la validation réussit
-                                },
-                                onFieldSubmitted: (value) {
-                                  _titre = value!;
-                                },
-                              ),
-                            ),
-
-                            // Champ d'entrée pour la description de l'annonce
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Input(
-                                placeholder: "Description",
-                                prefixIcon: Icon(Icons.description_sharp),
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'Veuillez entrer une description';
-                                  }
-                                  return null; // Retourne null si la validation réussit
-                                },
-                                onFieldSubmitted: (value) {
-                                  _description= value!;
-                                },
-                                maxLines: null, // Permet plusieurs lignes pour la description
-                              ),
-                            ),
-
-
-                            // Champ d'entrée pour d'autres caractéristiques de l'annonce
+                            // Ajoutez d'autres widgets ou fonctionnalités pour gérer les annonces
                             // ...
+                            ElevatedButton(
+                              onPressed: () {
+                                // Navigate to the ManageCourseAnnouncementsPage
+                                Navigator.pushReplacementNamed(context, '/manage_course_announcements');
+                              },
+                              child: Text('Gérer mes annonces de cours'),
+                            ),
 
                             ElevatedButton(
                               onPressed: () {
-                                // Ajoutez le code pour soumettre l'annonce à Firestore
-                                // Utilisez les informations nécessaires pour créer une annonce
-                                // Vous pouvez accéder aux valeurs des champs avec les contrôleurs ou directement depuis l'état du widget
+                                // Navigate to the main page or perform other actions as needed
+                                Navigator.pushReplacementNamed(context, '/form_cours');
                               },
-                              child: Text('Publish Announcement'),
+                              child: Text('Créer une nouvelle annonce de cours'),
                             ),
                           ],
                         ),

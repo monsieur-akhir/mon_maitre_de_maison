@@ -19,6 +19,7 @@ class FirebaseAuthService {
     return FirebaseAuth.instance.currentUser;
   }
 }
+bool isLoggedIn = false;
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -30,7 +31,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late List<DoctorModel> doctorDataList;
-  late String _firstName;
+  late String _firstName ="";
   late String _commune;
   @override
   void initState() {
@@ -52,7 +53,9 @@ class _HomePageState extends State<HomePage> {
           _firstName = userSnapshot.get("firstName") ?? "Nom Inconnu";
           _commune = userSnapshot.get("commune") ?? "Commune Inconnue";
 
-          setState(() {});
+          setState(() {
+            isLoggedIn = true;
+          });
         }
       }
     } catch (e) {
@@ -102,7 +105,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildUserName() {
     if (FirebaseAuth.instance.currentUser != null) {
       // Utilisateur connecté
-      return Text(FirebaseAuth.instance.currentUser!.displayName ?? "Utilisateur", style: TextStyles.h1Style);
+      return Text(_firstName ?? "Utilisateur", style: TextStyles.h1Style);
     } else {
       // Utilisateur non connecté
       return Text("Connecté en tant que visiteur", style: TextStyles.h1Style);

@@ -45,6 +45,15 @@ class ArgonDrawer extends StatelessWidget {
                       title: "Home",
                       isSelected: currentPage == "HomePage" ? true : false),
                   DrawerTile(
+                      icon: Icons.apps,
+                      onTap: () {
+                        if (currentPage != "Recherche")
+                          Navigator.pushReplacementNamed(context, '/all_annoucements');
+                      },
+                      iconColor: ArgonColors.primary,
+                      title: "Toute les annonces",
+                      isSelected: currentPage == "Toute les annonces" ? true : false),
+                  DrawerTile(
                       icon: Icons.pie_chart,
                       onTap: () {
                         if (currentPage != "Profile" && Navigator.canPop(context)) {
@@ -66,19 +75,13 @@ class ArgonDrawer extends StatelessWidget {
                   DrawerTile(
                       icon: Icons.settings_input_component,
                       onTap: () {
-                        if (currentPage != "Annonces")
+                        if (currentPage != "Mes Annonces")
                           Navigator.pushReplacementNamed(context, '/annonces');
                       },
                       iconColor: ArgonColors.error,
-                      title: "Annonces",
-                      isSelected: currentPage == "Annonces" ? true : false),
-                  DrawerTile(
-                      icon: Icons.apps,
-                      onTap: () {
-                      },
-                      iconColor: ArgonColors.primary,
-                      title: "Articles",
-                      isSelected: currentPage == "Articles" ? true : false),
+                      title: "Mes Annonces",
+                      isSelected: currentPage == "Mes Annonces" ? true : false),
+
                 ],
               ),
             ),

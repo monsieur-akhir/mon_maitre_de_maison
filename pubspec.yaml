@@ -79,10 +79,11 @@ flutter:
      - assets/img/profile-screen-avatar.jpg
      - assets/img/profile-screen-bg.png
      - assets/register.png
-     - assets/img/chat-avatar.jpeg
+     - assets/img/loading2.gif
      - assets/img/argon-logo.png
      - assets/img/argon-logo-onboarding.png
      - assets/liste_commune.json
+     - assets/cours.json
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

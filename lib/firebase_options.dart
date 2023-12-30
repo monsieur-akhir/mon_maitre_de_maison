@@ -39,29 +39,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: '#####################################',
-    appId: '#######################################',
-    messagingSenderId: '####################',
-    projectId: '####################',
-    authDomain: '####################',
-    storageBucket: 'e####################',
-    measurementId: '####################',
+    apiKey: 'AIzaSyCuORmo6RF7UYzXZ2HqqN7caoy-npNpn5M',
+    appId: '1:232838126652:web:231ca84313ed82e82eb739',
+    messagingSenderId: '232838126652',
+    projectId: 'enseignezmoi-26722',
+    authDomain: 'enseignezmoi-26722.firebaseapp.com',
+    storageBucket: 'enseignezmoi-26722.appspot.com',
+    measurementId: 'G-TWF37BS6RX',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: '####################',
-    appId: ####################,
-    messagingSenderId: '####################',
-    projectId: '####################',
-    storageBucket: '####################',
+    apiKey: 'AIzaSyA4Atu__nteVR4CFWGLqGkLo7pWDSxA6tg',
+    appId: '1:232838126652:android:16d2172a89b145c32eb739',
+    messagingSenderId: '232838126652',
+    projectId: 'enseignezmoi-26722',
+    storageBucket: 'enseignezmoi-26722.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: '####################',
-    appId: '####################',
-    messagingSenderId: '####################',
-    projectId: '####################-####################',
-    storageBucket: '####################-####################.###################',
-    iosBundleId: '####################',
+    apiKey: 'AIzaSyBRWkvb14c9e6DC29o0l4Ek5E4_EqQwxE4',
+    appId: '1:232838126652:ios:c09acaa71e8671472eb739',
+    messagingSenderId: '232838126652',
+    projectId: 'enseignezmoi-26722',
+    storageBucket: 'enseignezmoi-26722.appspot.com',
+    iosClientId: '232838126652-bihjv4qjp0dagrjgre4l4dlh88psaibu.apps.googleusercontent.com',
+    iosBundleId: 'com.example.enseignezmoi',
   );
 }
