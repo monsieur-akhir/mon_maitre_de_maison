@@ -211,7 +211,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 SizedBox(height: 10.0),
                 DropdownButtonFormField<String>(
                   decoration: InputDecoration(
-                    labelText: 'Sélectionnez une commune',
+                    labelText: 'Sélectionnez votre région',
                     prefixIcon: Icon(Icons.add_location_alt_outlined),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
@@ -235,7 +235,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 if (_selectedRegion != null)
                   DropdownButtonFormField<String>(
                     decoration: InputDecoration(
-                      labelText: 'Sélectionnez une commune',
+                      labelText: 'Sélectionnez votre commune',
                       prefixIcon: Icon(Icons.map_sharp),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),

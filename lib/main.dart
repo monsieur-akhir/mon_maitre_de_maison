@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mon_maitre_de_maison/src/model/dactor_model.dart';
 import 'package:mon_maitre_de_maison/src/pages/AllAnnouncementsPage.dart';
+import 'package:mon_maitre_de_maison/src/pages/JobsScreen.dart';
 import 'package:mon_maitre_de_maison/src/pages/ManageCourseAnnouncementsPage.dart';
 import 'package:mon_maitre_de_maison/src/pages/course_announcement_form.dart';
 import 'package:mon_maitre_de_maison/src/pages/detail_page.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         "/form_cours": (BuildContext context) => CourseAnnouncementForm(),
         '/manage_course_announcements': (context) => ManageCourseAnnouncementsPage(),
         '/all_annoucements': (context) => AllAnnouncementsPage(),
+        '/jobs': (context) => JobsScreen(),
       },
       onGenerateRoute: (settings) {
         final List<String> pathElements = settings.name!.split('/');

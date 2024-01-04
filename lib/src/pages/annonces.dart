@@ -18,17 +18,48 @@ class Annonces extends StatefulWidget {
   _AnnoncesState createState() => _AnnoncesState();
 
 }
+class FirebaseAuthService {
+  static User? getCurrentUser() {
+    return FirebaseAuth.instance.currentUser;
+  }
+}
 
 
 class _AnnoncesState extends State<Annonces> {
+  bool isLoggedIn = false; //
 
   @override
   void initState() {
     super.initState();
+    _loadUserData();
+  }
+  Future<void> _loadUserData() async {
+    try {
+      final user = FirebaseAuthService.getCurrentUser();
+      if (user != null) {
+        isLoggedIn = true;
+      }
+    } catch (e) {
+      print("Erreur lors de la récupération des données utilisateur : $e");
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    if (!isLoggedIn) {
+      // Si l'utilisateur n'est pas connecté, redirigez-le vers la page de connexion
+      Future.delayed(Duration.zero, () {
+        Navigator.pushReplacementNamed(context,
+            '/login'); // Remplacez '/login' par le nom de votre route de connexion
+      });
+      return Scaffold(
+          body: Center(
+              child:
+              CircularProgressIndicator())); // Affichez un indicateur de chargement pendant la redirection
+    }
+    // Si l'utilisateur est connecté, affichez le contenu du profil
+    else {
+
 
     return Scaffold(
         appBar: Navbar(transparent: true, title: ""),
@@ -97,5 +128,5 @@ class _AnnoncesState extends State<Annonces> {
 
           ],
         ));
-  }
+  }}
 }
