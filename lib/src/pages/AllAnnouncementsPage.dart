@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:mon_maitre_de_maison/firebase_access.dart';
 
 class AllAnnouncementsPage extends StatefulWidget {
@@ -26,49 +27,21 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
   FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future<List<DocumentSnapshot>> searchCourseAnnouncements({
-    String? level,
-    String? region,
-    String? commune,
-    required String selectedSubject,
-  }) async {
-    QuerySnapshot querySnapshot = await _firestore
-        .collection('course_announcements')
-        .where('selectedSubject', isEqualTo: selectedSubject)
-        .where('level', isEqualTo: level)
-        .get();
-
-    List<DocumentSnapshot> filteredAnnouncements = [];
-
-    for (QueryDocumentSnapshot document in querySnapshot.docs) {
-      // Fetch additional user information
-      DocumentSnapshot userSnapshot =
-      await _firestore.collection('users').doc(document['userId']).get();
-
-      // Check if the user's region and commune match the criteria
-      if (userSnapshot['region'] == region &&
-          userSnapshot['commune'] == commune) {
-        filteredAnnouncements.add(document);
-      }
-    }
-
-    return filteredAnnouncements;
-  }
-
   Stream<QuerySnapshot> _buildQuery() {
     CollectionReference courseAnnouncementsCollection =
     FirebaseFirestore.instance.collection('course_announcements');
 
+    Query query = courseAnnouncementsCollection;
+
     // Filtrez par matière (selectedSubject) en utilisant CONTAINS
     String searchText = _searchController.text;
-    Query query = courseAnnouncementsCollection.where('selectedSubject', isEqualTo: searchText);
-
+    if (searchText.isNotEmpty) {
+      query = query.where('selectedSubject', isEqualTo: searchText);
+    }
     // Filtrez par niveau (_selectedLevel) en utilisant CONTAINS
-    if (_selectedLevel != null) {
+    if (_selectedLevel!=null) {
       query = query.where('level', isEqualTo: _selectedLevel);
     }
-
-    // Filtrez par les annonces des utilisateurs dans une région donnée
 
     // Retournez la requête Firestore
     return query.snapshots();
@@ -105,115 +78,38 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Dropdown pour le niveau
-            TextField(
-              controller: _searchController,
-              decoration: InputDecoration(
-                hintText: 'Rechercher par matière...',
-                suffixIcon: IconButton(
+            // Barre de recherche et bouton de filtrage
+            Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    controller: _searchController,
+                    decoration: InputDecoration(
+                      hintText: 'Rechercher par matière...',
+                    ),
+                  ),
+                ),
+                IconButton(
                   icon: Icon(Icons.search),
                   onPressed: () {
                     _updateAnnouncementsList();
                   },
                 ),
-              ),
-            ),
-            _buildDropdown(
-              value: _selectedLevel,
-              onChanged: (value) {
-                setState(() {
-                  _selectedLevel = value!;
-                  _updateAnnouncementsList();
-                });
-              },
-              items: ['', 'Primaire', 'Collège', 'Lycée'],
-            ),
-            SizedBox(height: 16.0),
-
-            // Dropdown pour la région
-            DropdownButtonFormField<String>(
-              decoration: InputDecoration(
-                labelText: 'Sélectionnez votre région',
-                prefixIcon: Icon(Icons.add_location_alt_outlined),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                ElevatedButton(
+                  onPressed: () {
+                    _showFilterModal(context);
+                  },
+                  child: Icon(Icons.filter_alt),
                 ),
-              ),
-              value: _selectedRegion,
-              items: _regions.map((region) {
-                return DropdownMenuItem<String>(
-                  value: region,
-                  child: Text(region),
-                );
-              }).toList(),
-              onChanged: (value) {
-                setState(() {
-                  _selectedRegion = value!;
-                  _selectedCommune =
-                  null; // Réinitialisez la commune sélectionnée
-                  _updateAnnouncementsList();
-                });
-              },
+              ],
             ),
-            SizedBox(height: 16.0),
-
-            // Dropdown pour la commune
-            if (_selectedRegion != null)
-              DropdownButtonFormField<String>(
-                decoration: InputDecoration(
-                  labelText: 'Sélectionnez votre commune',
-                  prefixIcon: Icon(Icons.map_sharp),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                ),
-                value: _selectedCommune,
-                items: [
-                  DropdownMenuItem<String>(
-                    value: '', // Ajoutez cette option vide
-                    child: Text(''),
-                  ),
-                  ..._communes[_selectedRegion!]!.map((commune) {
-                    return DropdownMenuItem<String>(
-                      value: commune,
-                      child: Text(commune),
-                    );
-                  }),
-                ],
-                onChanged: (value) {
-                  setState(() {
-                    _selectedCommune = value;
-                    _updateAnnouncementsList();
-                  });
-                },
-              ),
-
-            SizedBox(height: 10.0),
-
-            // Champ de texte pour le quartier
-            if (_selectedCommune != null)
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Quartier',
-                  prefixIcon: Icon(Icons.location_city_outlined),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                ),
-                onChanged: (value) {
-                  setState(() {
-                    _quartier = value;
-                    _updateAnnouncementsList();
-                  });
-                },
-              ),
             SizedBox(height: 16.0),
 
             // Champ de recherche
-
             Expanded(
               child: StreamBuilder<QuerySnapshot>(
                 stream: _buildQuery(),
@@ -241,6 +137,98 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
       ),
     );
   }
+  Future<void> _showFilterModal(BuildContext context) async {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double modalHeight = screenHeight * 0.6;
+
+    return showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return Container(
+          height: modalHeight,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  _buildDropdown(
+                    value: _selectedLevel,
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedLevel = value!;
+                      });
+                    },
+                    items: ['', 'Primaire', 'Collège', 'Lycée'],
+                    labelText: 'Niveau',
+                    prefixIcon: Icons.school,
+                  ),
+                  SizedBox(height: 16.0),
+
+                  _buildDropdown(
+                    value: _selectedRegion,
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedRegion = value!;
+                        _selectedCommune = null;
+                      });
+                    },
+                    items: _regions,
+                    labelText: 'Sélectionnez votre région',
+                    prefixIcon: Icons.add_location_alt_outlined,
+                  ),
+                  SizedBox(height: 16.0),
+
+                  // Dropdown pour la commune
+                  if (_selectedRegion != null)
+                    _buildDropdown(
+                      value: _selectedCommune,
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedCommune = value!;
+                        });
+                      },
+                      items: [''] + _communes[_selectedRegion!]!,
+                      labelText: 'Sélectionnez votre commune',
+                      prefixIcon: Icons.map_sharp,
+                    ),
+                  SizedBox(height: 16.0),
+
+                  // Champ de texte pour le quartier
+                  if (_selectedCommune != null)
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'Quartier',
+                        prefixIcon: Icon(Icons.location_city_outlined),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          _quartier = value;
+                        });
+                      },
+                    ),
+                  SizedBox(height: 16.0),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      _updateAnnouncementsList();
+                      Navigator.pop(context); // Ferme la modalité après validation
+                    },
+                    child: Text('Valider'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   Widget _buildAnnouncementCard(QueryDocumentSnapshot<Object?> announcement) {
     return Card(
       margin: EdgeInsets.all(8.0),
@@ -250,7 +238,7 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
       ),
       child: InkWell(
         onTap: () {
-          _showAnnouncementDetailsDialog(announcement);
+        //  _showAnnouncementDetailsDialog(announcement);
         },
         child: Container(
           padding: EdgeInsets.all(16.0),
@@ -272,11 +260,11 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
                 future: _fetchUserData(announcement['userId']),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Text('Chargement des informations de l\'utilisateur...');
+                    return Text("Chargement des informations de l'utilisateur...");
                   } else if (snapshot.hasError) {
-                    return Text('Erreur: ${snapshot.error}');
+                    return Text("Erreur: ${snapshot.error}");
                   } else if (snapshot.hasData) {
-                    var userData = snapshot.data;
+                    var userData = snapshot.data as Map<String, dynamic>?;
 
                     var userFullName = userData?['firstName'] + ' ' + userData?['lastName'];
                     var userCommune = userData?['commune'] ?? '';
@@ -312,13 +300,16 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              // Logique pour mettre en favoris
+                              if (userData != null) {
+                                _toggleFavorite(announcement.id);
+                              }
                             },
                             child: Icon(
                               Icons.favorite,
-                              color: Colors.red, // Couleur du bouton Favoris
+                              color: _isFavorite(userData, announcement.id) ? Colors.red : Colors.grey,
                             ),
                           ),
+
                           SizedBox(width: 16),
                           GestureDetector(
                             onTap: () {
@@ -334,10 +325,11 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
                       ),
                     );
                   } else {
-                    return Text('Aucune information utilisateur disponible.');
+                    return Text("Aucune information utilisateur disponible.");
                   }
                 },
               ),
+
             ],
           ),
         ),
@@ -435,7 +427,9 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
                                   ),
                                   // Ajoutez d'autres informations utilisateur si nécessaire
                                 ],
+
                               ),
+
                               leading: Container(
                                 height: 50,
                                 width: 50,
@@ -469,14 +463,31 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
                         primary: Colors.deepPurple,
                         onPrimary: Colors.white, // Couleur du texte
                       ),
-                      icon: Icon(Icons.check),
+                      icon: Icon(Icons.phone_rounded),
                       label: Text(
-                        'Valider',
+                        'Contacter',
                         style: TextStyle(fontSize: 16),
                       ),
                     ),
 
+
+
                   ],
+
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    _rateUser(announcement['userId']);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.yellow,
+                    onPrimary: Colors.white,
+                  ),
+                  icon: Icon(Icons.star),
+                  label: Text(
+                    'Noter',
+                    style: TextStyle(fontSize: 16),
+                  ),
                 ),
               ],
             ),
@@ -485,7 +496,42 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
       },
     );
   }
+  void _rateUser(String ratedUserId) async {
+    double? rating = await showDialog<double>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Noter cet utilisateur'),
+          content: Column(
+            children: [
+              Text('Choisissez une note de 1 à 5'),
+              SizedBox(height: 16),
+              RatingBar.builder(
+                initialRating: 3,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                itemBuilder: (context, _) => Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
+                onRatingUpdate: (rating) {
+                  Navigator.pop(context, rating);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
 
+    if (rating != null) {
+      await FirebaseAccess.rateUser(FirebaseAuth.instance.currentUser?.uid ?? '', ratedUserId, rating);
+      setState(() {});
+    }
+  }
 
   Widget _buildDetailRow(IconData icon, String label, dynamic value) {
     return Row(
@@ -537,18 +583,64 @@ class _AllAnnouncementsPageState extends State<AllAnnouncementsPage> {
 
   Widget _buildDropdown({
     required String? value,
-    required void Function(String?)? onChanged,
+    required Function(String?) onChanged,
     required List<String> items,
+    required String labelText,
+    required IconData prefixIcon,
   }) {
     return DropdownButtonFormField<String>(
+      decoration: InputDecoration(
+        labelText: labelText,
+        prefixIcon: Icon(prefixIcon),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
       value: value,
-      onChanged: onChanged,
       items: items.map((item) {
         return DropdownMenuItem<String>(
           value: item,
           child: Text(item),
         );
       }).toList(),
+      onChanged: onChanged,
     );
   }
+
+
+  void _toggleFavorite(String announcementId) async {
+    String userId = FirebaseAuth.instance.currentUser?.uid ?? '';
+    Map<String, dynamic> userData = await _fetchUserData(userId);
+
+    List<String> favoriteAnnouncements = List<String>.from(userData['favoriteAnnouncements'] ?? []);
+
+    if (favoriteAnnouncements.contains(announcementId)) {
+      // Retirer des favoris
+      favoriteAnnouncements.remove(announcementId);
+    } else {
+      // Ajouter aux favoris
+      favoriteAnnouncements.add(announcementId);
+    }
+
+    // Mettre à jour la liste des favoris dans Firestore pour l'utilisateur
+    await FirebaseAccess.updateUserFavoriteAnnouncements(userId, favoriteAnnouncements);
+
+    // Actualiser l'interface utilisateur
+    setState(() {
+      userData['favoriteAnnouncements'] = favoriteAnnouncements;
+    });
+  }
+
+  bool _isFavorite(Map<String, dynamic>? userData, String announcementId) {
+    return userData != null &&
+        userData['favoriteAnnouncements'] is List<String> &&
+        userData['favoriteAnnouncements'].contains(announcementId);
+  }
+
+
+
+
+
+
+
 }
